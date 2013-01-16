@@ -100,7 +100,9 @@ ROOT_URLCONF = 'AwwOMeter.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'AwwOMeter.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/dan/PycharmProjects/AwwOMeter/templates',)
+TEMPLATE_DIRS = ('/home/dan/PycharmProjects/AwwOMeter/templates',
+                 '/app/templates',
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
