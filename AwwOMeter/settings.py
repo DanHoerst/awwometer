@@ -65,6 +65,7 @@ STATIC_URL = '/static/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     '/home/dan/PycharmProjects/AwwOMeter/templates/static/',
+    '/app/templates/static/',
 )
 
 # List of finder classes that know how to find static files in
