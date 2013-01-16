@@ -1,4 +1,6 @@
 # Django settings for AwwOMeter project.
+import os
+import sys
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -77,7 +79,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '2b3+0b5qv(2w^!gh+xfd7a*5*v)f5hj^a$2eca$(==3u)&amp;7(9u'
+secret_KEY=os.environ.get('secret_KEY')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -151,3 +153,8 @@ LOGGING = {
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
