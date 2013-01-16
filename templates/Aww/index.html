@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{ STATIC_URL }}stylesheet.css" rel="stylesheet">
+    <title>Aww-O-Meter</title>
+</head>
+<body>
+<h1>Aww-O-Meter</h1>
+{% block content %}
+<div class="Left_Animal">
+    <img border="0" src="{{ left_animal.link }}" alt="Pulpit rock" width="400" height="400">
+    <form id="vote_left" method=POST action="{% url Aww.views.vote left_animal.id right_animal.id %}">
+        {% csrf_token %}
+        <input class ="btn btn-success btn-small" id ="myButton" type="submit" value="Vote!">
+    </form>
+    <p>{{ left_animal.rating }}</p>
+</div>
+<div class="Right_Animal">
+    <img border="0" src="{{ right_animal.link }}" alt="Pulpit rock" width="400" height="400">
+    <form id="vote_right" method=POST action="{% url Aww.views.vote right_animal.id left_animal.id %}">
+        {% csrf_token %}
+        <input class ="btn btn-success btn-small" id ="myButton" type="submit" value="Vote!">
+    </form>
+    <p>{{ right_animal.rating }}</p>
+</div>
+{% endblock %}
+</body>
+</html>

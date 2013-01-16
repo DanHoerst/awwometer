@@ -1,0 +1,9 @@
+body {
+    text-align:center;
+}
+div.Right_Animal{
+    display: inline-block;
+}
+div.Left_Animal{
+    display: inline-block;
+}
